@@ -1,0 +1,35 @@
+{% extends "page.html.twig" %}
+
+{% block body %}
+{% block slider %}
+    {% endblock %}
+
+<div class="pageBox">
+        <div class="container pageBox2">
+            <div class="row pageRowContent">
+                {% for bb in beitrag %}
+                    <div class="col-12 beitrag">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-4 beitragImg">
+                                    <img class="card-img-top" src="{{ bb.thumbnail.src('thumbnail-crop') | default( theme.link ~ "/images/teaser.jpg" )}}" width="100px" alt="Card image cap">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-8 beitragText">
+                                    <div class="card-body">
+                                        <h3 class="card-title">{{ bb.post_title }}</h3>
+                                        <p class="card-text">{{ bb.post_content | truncate(40)}}</p>
+                                        <a href="{{ bb.guid }}" class="card-link">Weiterlesen</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+

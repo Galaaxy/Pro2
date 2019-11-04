@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ theme.link }}/css/page.min.css?ver=1.0.0">
+{% endblock %}
+
+{% block body %}
+
+    {% block slider %}
+        
+    {% endblock %}
+
+    <div class="pageBox">
+
+        
+        <!--<div class="container-fluid pageBox1">
+            <div class="container">
+                <div class="row pageRowHeadline">
+                    <div class="col-md-12 text-center">
+                        <h1>{{ post.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+        <div class="container pageBox2">
+            <div class="row pageRowContent">
+                <div class="col-md-12">
+                    <h1 style="color: #007540;">{{ post.title }}</h1>
+                    <img src="{{ post.thumbnail.src('medium_large') }}" alt="">
+                    <p>{{ post.content }}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

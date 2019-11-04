@@ -1,0 +1,144 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+	{% include 'slider.html.twig' %}
+
+	<div class="container-fluid start-text mt-5 mb-5">
+		<div class="container">
+		{{ post.content }}
+		</div>
+	</div>
+	
+	<div class="container-fluid parallax fewoBox std-padding">
+        <div class="row">
+            <div class="container fewoContent">
+                <div class="row flexStart">
+                {% for key,image in images %}
+                        <div class="thumbnail col-sm-12 col-md-6">
+                            <img src="{{ image[0].img_start[0] }}" alt="..." class="img-fluid">
+                            <div class="caption">
+                                <h3>{{ fewo[key].name }}</h3>
+                                <p>{{ fewo[key].text|truncate(15) }}</p>
+                                <p><a href="{{ url }}/ferienwohnungen/ferienwohnung-{{ key+1 }}/" class="btn btn-primary" role="button">Mehr Informationen</a></p>
+                            </div>
+                        </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+	{#<div class="container-fluid first-teaser">
+		<div class="container">
+			<div class="row d-flex justify-content-center align-items-stretch">
+
+			<div class="col-lg-4 col-12 col-sm-6 d-flex mb-3">
+
+				<div class="card text-center">
+
+					<div class="card-body">
+						<img src="{{ theme.link }}/images/icons/kochen.png" class="start-icons">
+						<h5 class="card-title  text-uppercase">{{ teaser2[1].name }}</h5>
+						<p class="card-text">{{ teaser2[1].position }}</p>
+					</div>
+				</div>
+			</div>
+
+				<div class="col-lg-4  col-12 col-sm-6 d-flex mb-3">
+
+				<div class="card text-center">
+					<div class="card-body">
+						<img src="{{ theme.link }}/images/icons/backen.png" class="start-icons">
+						<h5 class="card-title border-red text-uppercase">{{ teaser2[2].name }}</h5>
+						<p class="card-text">{{ teaser2[2].position }}</p>
+					</div>
+				</div>
+				</div>
+
+			</div>
+		</div>
+	</div>#}
+{#
+HIER STEHEN DIE TEASER
+
+<div class="container-fluid second-teaser">
+	<div class="container">
+		<div class="row d-flex justify-content-center align-items-stretch">
+			<div class="col-lg-3 col-md-6 col-12 d-flex mb-3">
+				<div class="card text-center">
+					<div class="card-body">
+						<h5 class="card-title  text-uppercase">{{ teaser4[1].name }}</h5>
+						<p class="card-text">{{ teaser4[1].position }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-12 d-flex mb-3">
+				<div class="card text-center">
+					<div class="card-body">
+						<h5 class="card-title  text-uppercase">{{ teaser4[2].name }}</h5>
+						<p class="card-text">{{ teaser4[2].position }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-12 d-flex mb-3">
+				<div class="card text-center">
+					<div class="card-body">
+						<h5 class="card-title  text-uppercase">{{ teaser4[3].name }}</h5>
+						<p class="card-text">{{ teaser4[3].position }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-12 d-flex mb-3">
+				<div class="card text-center">
+					<div class="card-body">
+						<h5 class="card-title  text-uppercase">{{ teaser4[4].name }}</h5>
+						<p class="card-text">{{ teaser4[4].position }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+#}
+{#
+                        <div class="container-fluid">
+                            <div class="container">
+                                <div class="row d-flex justify-content-center align-items-stretch">
+                                    <div class="col-lg-6 col-md-6 col-12 mt-5 mb-5 p-5">
+                                        <img src="{{ theme.link }}/images/logo_2.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+<div class="container-fluid" id="contact-start">
+	<div class="container" id="contact-area">
+		{{ function('do_shortcode','[contact-form-7 id="50" title="Kontaktformular Standard"]') }}
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="container-fluid parallax para-teaser">
+	<div class="container">
+		<div class="saison-teaser">
+			<blockquote class="blockquote text-center">
+				<p>auf Vorbestellung</p>
+				<h2>SAISONALE KISTE</h2>
+				<p>Mein Laden-Café - <span class="green">BIO</span><span class="lila">logisch</span> - Dein Laden-Café</p>
+				
+				<p>Wir sind ein kleines, noch sehr junges und motiviertes Unternehmen und haben uns zur Aufgabe gemacht, die Region mit ausgewählten Bioprodukten zu unterstützen. Wir vermarkten regionale und saisonale Produkte.<br><br>
+				Haben Sie Fragen? Dann kontaktieren Sie uns gern.<br><br>
+				Im BIO?logisch! biete ich Ihnen das richtige Ambiente für hochwertige Bioprodukte. Bio-Genießer können bei mir frische Backwaren, leckeren Käse, knackiges Gemüse und Obst kaufen.
+				Der passende Biowein samt Antipasti & Co ergänzen das Angebot.
+				In meinem Sortiment finden Sie eine große Auswahl an verschiedenen Lebensmitteln und Drogerieartikeln</p>
+				<button class="btn btn-default">Weiterlesen</button>
+			</blockquote>
+		</div>
+		
+	</div>
+</div>
+
+#}
+	{% endblock %}

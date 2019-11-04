@@ -1,0 +1,142 @@
+$braun: #5f3f12;
+$hellgruen: #74A27B;
+$dunkelgruen: #007540;
+$main-font: 'Frutiger';
+$main-font-headlines: 'AlexBrush', cursive;
+
+
+*{
+    color: $dunkelgruen;
+    font-family: $main-font;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: $main-font-headlines;
+	margin-bottom: 1rem;
+    .theme-font{
+        font-family: $main-font-headlines;
+    }
+}
+    
+.logo{
+    max-width: 100%;
+}
+
+.theme-font, .theme-font-big, .theme-font-normal, .theme-font-small{
+	font-family: $main-font-headlines;
+}
+.theme-font-big, .font-big{
+    font-size: 1.4rem;
+}
+.theme-font-normal, .font-normal{
+    font-size: 0.95rem;
+}
+.theme-font-small, .font-small{
+	font-size: 0.85rem;
+}
+
+a{
+    color: $braun;
+    &:hover{
+        color: $braun;
+    }
+}
+
+.sliderBox{
+    position: relative;
+}
+
+.fewoContent{
+    h3{
+        font-family: $main-font-headlines;
+        font-size: 40px;
+    }
+}
+
+.btn-primary{
+    background-color: $hellgruen;
+    border: 2px solid transparent;
+    border-radius: 0;
+
+    &:hover{
+        background-color: $braun;
+        border-color: transparent;
+    }
+}
+
+// FEWO Styles
+.fewoContent{
+    .caption{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+ 
+#FooterBox{
+    //background: url(../images/dust_scratches.png);
+    padding-top: 1%;
+    background-color: $hellgruen;
+    *{
+        color: white;
+    }
+    a:hover{
+        color: $braun;
+    }
+}
+// Navigation Styles
+.dropdown-menu{
+    border-top: 1px solid white;
+    border-radius: 0;
+    min-width: 230px;
+    margin-top: -1px;
+    .nav-link{
+        padding-left: 10px
+    }
+}
+.navbar-light{
+    .navbar-nav{
+        .nav-link{
+            color: white;
+            &:hover{
+                color: $braun;
+            }
+        }
+    }
+}  
+.bg-light{
+    background-color: #5c8a63!important;
+}
+.navbar{
+    background-color: $hellgruen!important;
+    color: white;
+}
+
+// Unterseiten Styles
+
+.pageBox1{
+    .pageRowHeadline{
+        font-family: $main-font-headlines;
+    }
+}
+.pageBox2{
+    .pageRowContent{
+        padding-top: 15px;
+    }
+}
+
+.wpcf7{
+    input[type=submit]{
+        background-color: $hellgruen;
+        color: white;
+        cursor: pointer;
+        &:hover{
+            background-color: $braun;
+            color: white;
+        }
+    }
+} 
+
+/** Cookie Hinweis */
+span#cn-notice-text{
+    color: white;
+}

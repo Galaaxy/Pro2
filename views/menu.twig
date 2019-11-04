@@ -1,0 +1,54 @@
+{# Menu Template: 'menu.twig' #}
+
+ <div class="container-fluid headLogo">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-stretch">
+            <div class="col-lg-6 col-md-6 col-12 mt-5 mb-5 text-center">
+                <a href="{{ site.url }}">    
+                    <img src="{{ theme.link }}/images/logo_4formedia.png" class="img-fluid logo">
+                    <!-- <span class="head-text">Ferienwohnungen</span> -->
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fixed-top" id="topCall"></div>
+<nav class="navbar navbar-expand-xl navbar-light bg-light {#fixed-top#}" id="mainNav">
+
+    <div class="container justify-content-end">
+
+
+        <button class="navbar-toggler navbar-toggler-right costum-toggler" type="button" data-toggle="collapse" data-target="#navbarMobile" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbarMobile" class="collapse navbar-collapse justify-content-center align-items-center">
+            <ul class="navbar-nav">
+                {% for item in menu.items %}
+                    <li class="{{ item.classes | join(' ') }} dropdown nav-item text-uppercase">
+
+                        {% if item.children %}
+                            <a href="{{ item.link }}" class="dropdown-toggle nav-link text-uppercase" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.title }} <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu bg-light">
+                                {% for child in item.children %}
+                                    <li>
+                                        <a href="{{ child.link }}" class="nav-link">{{ child.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+
+                            <a href="{{ item.link }}" class="nav-link">{{ item.title }}</a>
+
+                        {% endif %}
+
+                    </li>
+                {% endfor %}
+            </ul>
+        </div><!--/.nav-collapse -->
+
+    </div>
+
+
+</nav>
